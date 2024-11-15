@@ -24,7 +24,10 @@
         }
 
         // Creating Filtering Extension Methods
-        public static IEnumerable<Product?> FilterByPrice(this IEnumerable<Product?> productEnum, decimal minimumPrice)
+        public static IEnumerable<Product?> FilterByPrice(
+            this IEnumerable<Product?> productEnum,
+            decimal minimumPrice
+        )
         {
             foreach (Product? prod in productEnum)
             {
@@ -36,7 +39,10 @@
         }
 
         // Using Lambda Expressions
-        public static IEnumerable<Product?> Filter(this IEnumerable<Product?> productEnum, Func<Product?, bool> selector)
+        public static IEnumerable<Product?> Filter(
+            this IEnumerable<Product?> productEnum,
+            Func<Product?, bool> selector
+        )
         {
             foreach (Product? prod in productEnum)
             {

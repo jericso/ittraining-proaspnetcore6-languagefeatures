@@ -3,7 +3,6 @@ using System.Net.NetworkInformation;
 
 namespace LanguageFeatures.Models
 {
-
     //public IEnumerable<Product?>? Products { get; set; }
     // Applying Extension Methods to an Interface
     //public class ShoppingCart : IEnumerable<Product?>
@@ -19,10 +18,15 @@ namespace LanguageFeatures.Models
     public class ShoppingCart : IProductSelection
     {
         private List<Product> products = new();
+
         public ShoppingCart(params Product[] prods)
         {
             products.AddRange(prods);
         }
-        public IEnumerable<Product>? Products { get => products; }
+
+        public IEnumerable<Product>? Products
+        {
+            get => products;
+        }
     }
 }
